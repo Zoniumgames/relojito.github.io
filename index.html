@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1 id="reloj"></h1>
+
+  <script>
+    function update(){
+      const digitos = {
+        timeZone: 'America/Guatemala',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      
+      const hora = new Intl.DateTimeFormat('es-US', digitos).format(new Date());
+      
+      document.getElementById("reloj").textContent = `${hora} Guatemala`;
+    }
+      setInterval(update, 1000);
+      
+      update();
+  </script>
+</body>
+</html>
